@@ -39,17 +39,17 @@ while True:
             print("O valor deve ser maior que zero!")
             continue
 
-        elif float(saque) <= saldo and float(saque) <= limite and numero_de_saques < 3 and (saldo - float(saque) >= 0):
-            saldo -= float(saque)
-            numero_de_saques += 1
-            extrato += f"Saque realizado no valor de: {saque}\n"
-            print(f"Seu saldo agora é {saldo:.2f}")
-
         elif (saldo - float(saque)) < 0:
             print(f'Você não pode sacar esse valor, não tem saldo suficiente!')
 
         elif float(saque) > limite:
             print(f'O limite de saque é {limite}')
+
+        elif float(saque) <= saldo and float(saque) <= limite and numero_de_saques < 3 and (saldo - float(saque) >= 0):
+            saldo -= float(saque)
+            numero_de_saques += 1
+            extrato += f"Saque realizado no valor de: {saque}\n"
+            print(f"Seu saldo agora é {saldo:.2f}")
 
         else:
             print('Ocorreu um problema!')
